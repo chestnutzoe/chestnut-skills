@@ -1,0 +1,44 @@
+[
+  {
+    "skill": "chestnut-copy",
+    "label": "Chestnut Copy",
+    "repo": "chestnutzoe/chestnut-copy-skill",
+    "key_secret": "PUBLISH_CHESTNUT_COPY"
+  },
+  {
+    "skill": "chestnut-positioning-statement",
+    "label": "一句话定位",
+    "repo": "chestnutzoe/chestnut-positioning-statement",
+    "key_secret": "PUBLISH_CHESTNUT_POSITIONING_STATEMENT"
+  },
+  {
+    "skill": "chestnut-brand-guidance",
+    "label": "品牌表达指南",
+    "repo": "chestnutzoe/chestnut-brand-guidance",
+    "key_secret": "PUBLISH_CHESTNUT_BRAND_GUIDANCE"
+  },
+  {
+    "skill": "chestnut-brand-story",
+    "label": "个人品牌故事",
+    "repo": "chestnutzoe/chestnut-brand-story",
+    "key_secret": "PUBLISH_CHESTNUT_BRAND_STORY"
+  },
+  {
+    "skill": "chestnut-product-brief",
+    "label": "产品说明书",
+    "repo": "chestnutzoe/chestnut-product-brief",
+    "key_secret": "PUBLISH_CHESTNUT_PRODUCT_BRIEF"
+  },
+  {
+    "skill": "chestnut-style-analyzer",
+    "label": "文风分析",
+    "repo": "chestnutzoe/chestnut-style-analyzer",
+    "key_secret": "PUBLISH_CHESTNUT_STYLE_ANALYZER"
+  },
+  {
+    "skill": "chestnut-wechat-publisher",
+    "label": "公众号草稿发布",
+    "repo": "chestnutzoe/chestnut-wechat-publisher",
+    "key_secret": "PUBLISH_CHESTNUT_WECHAT_PUBLISHER"
+  }
+]

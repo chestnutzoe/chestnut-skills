@@ -1,0 +1,28 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "chestnut",
+  "description": "Chestnut Copy: standalone copywriting skill.",
+  "owner": {
+    "name": "chestnutzoe",
+    "url": "https://github.com/chestnutzoe"
+  },
+  "plugins": [
+    {
+      "name": "chestnut",
+      "description": "Chestnut Copy: standalone copywriting skill.",
+      "source": "./plugins/chestnut",
+      "category": "productivity",
+      "tags": [
+        "chestnut",
+        "copywriting",
+        "content"
+      ]
+    },
+    {
+      "name": "chestnut-copy",
+      "description": "Chestnut Copy: standalone copywriting skill.",
+      "source": "./plugins/chestnut-copy",
+      "category": "productivity"
+    }
+  ]
+}

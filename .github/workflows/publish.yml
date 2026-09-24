@@ -1,0 +1,77 @@
+name: Publish Chestnut Skills
+on:
+  push:
+    branches: [main]
+    paths: ['skills/**', 'distribution/**', 'scripts/**', 'LICENSE', '.github/workflows/publish.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: chestnut-distribution
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_distribution.py
+      - id: matrix
+        run: echo "matrix=$(python3 -c 'import json; print(json.dumps({"include":json.load(open("distribution/skills.json"))}))')" >> "$GITHUB_OUTPUT"
+  bundle:
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/package.py
+      - name: Publish individual ZIPs and full bundle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="source-${GITHUB_SHA:0:12}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" dist/* --clobber
+          else
+            gh release create "$tag" dist/* --target "$GITHUB_SHA" --title "Chestnut Skills · $tag" --notes 'Generated from the single source of truth. Each ZIP is independent; chestnut-skills.zip contains the complete current collection.' --latest
+          fi
+  mirrors:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure repository-scoped deploy key
+        env:
+          DEPLOY_KEY: ${{ secrets[matrix.key_secret] }}
+        run: |
+          test -n "$DEPLOY_KEY"
+          install -m 700 -d "$RUNNER_TEMP/mirror-ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$RUNNER_TEMP/mirror-ssh/key"
+          chmod 600 "$RUNNER_TEMP/mirror-ssh/key"
+          cp distribution/github_known_hosts "$RUNNER_TEMP/mirror-ssh/known_hosts"
+          echo "GIT_SSH_COMMAND=ssh -i $RUNNER_TEMP/mirror-ssh/key -o IdentitiesOnly=yes -o UserKnownHostsFile=$RUNNER_TEMP/mirror-ssh/known_hosts -o StrictHostKeyChecking=yes" >> "$GITHUB_ENV"
+      - name: Render and push generated distribution
+        env:
+          SKILL: ${{ matrix.skill }}
+          TARGET_REPO: ${{ matrix.repo }}
+        run: |
+          python3 scripts/render_mirror.py "$SKILL" "$RUNNER_TEMP/rendered" "$GITHUB_SHA"
+          git clone "git@github.com:$TARGET_REPO.git" "$RUNNER_TEMP/mirror"
+          rsync -a --delete --exclude=.git/ "$RUNNER_TEMP/rendered/" "$RUNNER_TEMP/mirror/"
+          cd "$RUNNER_TEMP/mirror"
+          git checkout -B main
+          git config user.name 'Chestnut Skills Publisher'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish $SKILL from chestnut-skills ${GITHUB_SHA:0:12}"
+            git push origin main
+          fi
+      - name: Remove temporary deploy key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/mirror-ssh/key"
