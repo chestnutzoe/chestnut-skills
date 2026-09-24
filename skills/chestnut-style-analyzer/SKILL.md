@@ -13,11 +13,7 @@ It answers one question:
 
 > 这篇文案像不像这个人？
 
-It is independent, but works best as the first layer of the Chestnut Copy skill set:
-
-1. 文风分析: extract the creator's voice.
-2. 爆款文案 SOP: use Zoe/Chestnut's production method.
-3. 公众号发布: upload approved drafts to the WeChat draft box.
+It is an independent Skill. Its output can optionally be used by `chestnut-copy` to adapt copy to the creator's voice. Publishing is outside this Skill's scope.
 
 ## Source Rule
 
