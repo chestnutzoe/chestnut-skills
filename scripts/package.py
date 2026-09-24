@@ -4,6 +4,8 @@ import hashlib, json
 root = Path(__file__).resolve().parents[1]
 out = root / 'dist'
 out.mkdir(exist_ok=True)
+for stale in out.glob('*.zip'):
+    stale.unlink()
 paths = sorted((root / 'skills').iterdir())
 assert len(paths) == 7
 for name, selected in [(p.name, [p]) for p in paths] + [('chestnut-skills', paths)]:

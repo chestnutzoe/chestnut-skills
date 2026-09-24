@@ -13,7 +13,7 @@
 | [chestnut-brand-guidance](skills/chestnut-brand-guidance/SKILL.md) | 品牌表达指南 | [单独 ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-brand-guidance.zip) |
 | [chestnut-product-brief](skills/chestnut-product-brief/SKILL.md) | 产品说明书 | [单独 ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-product-brief.zip) |
 | [chestnut-style-analyzer](skills/chestnut-style-analyzer/SKILL.md) | 文风分析 | [单独 ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-style-analyzer.zip) |
-| [chestnut-copy-sop](skills/chestnut-copy-sop/SKILL.md) | 文案工作流 | [单独 ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-copy-sop.zip) |
+| [chestnut-copy](skills/chestnut-copy/SKILL.md) | 文案工作流 | [单独 ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-copy.zip) |
 | [chestnut-wechat-publisher](skills/chestnut-wechat-publisher/SKILL.md) | 公众号草稿发布 | [单独 ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-wechat-publisher.zip) |
 
 ## 怎么用
@@ -22,7 +22,7 @@
 
 也可以把表格里的 Skill 链接发给支持读取 GitHub 的 AI，明确说要用它完成什么。涉及脚本或参考文件时，请下载完整的单项 ZIP，不要只复制 SKILL.md。
 
-已经安装 Copy 时，不必重复安装 `chestnut-copy-sop`；文风分析和公众号发布现在也是独立 Skill，按需单独下载。
+已经安装 Copy 时，不必重复安装 `chestnut-copy`；文风分析和公众号发布现在也是独立 Skill，按需单独下载。
 
 ## 已经在用 Copy Skill？
 
@@ -33,7 +33,7 @@
 ## 维护与发布
 
 - 六个非 Copy 工具（包括文风分析、公众号发布）的公开维护源是本仓库 `skills/` 下的对应目录。
-- 只有 `chestnut-copy-sop` 的公开维护源仍在旧 Copy 仓库。本仓库保留明确版本的发行副本，只有发布时才有意更新；不与私人工作 Skills 同步。
-- 文风分析和公众号发布迁入时的内容来源：`chestnut-copy-skill` 提交 `092e0af861c911b96aed147b8512ab75ca7b0aa9`。四个品牌工具也由该版本迁入。Copy 发行副本更新至 2.3.0，明确两个伴随工具为可选独立下载。
+- 只有 `chestnut-copy` 的公开维护源仍在旧 Copy 仓库。本仓库保留明确版本的发行副本，只有发布时才有意更新；不与私人工作 Skills 同步。
+- 文风分析和公众号发布迁入时的内容来源：`chestnut-copy-skill` 提交 `092e0af861c911b96aed147b8512ab75ca7b0aa9`。四个品牌工具也由该版本迁入。Copy 发行副本更新至 2.3.1，Skill 正式名称为 `chestnut-copy`（Chestnut Copy）；两个伴随工具为可选独立下载。
 - 运行 `python3 scripts/package.py` 生成七个单项 ZIP、整包 ZIP 和 SHA-256 校验记录；上传到 GitHub Release。
 - 这个仓库提供独立 Skills 下载，不复用旧仓库的 `chestnut` marketplace 或插件身份。
