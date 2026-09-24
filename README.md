@@ -22,18 +22,18 @@
 
 也可以把表格里的 Skill 链接发给支持读取 GitHub 的 AI，明确说要用它完成什么。涉及脚本或参考文件时，请下载完整的单项 ZIP，不要只复制 SKILL.md。
 
-如果已经安装原来的 Copy 工具包，新增四个品牌工具即可，不必重复安装文案、文风分析和公众号发布。
+已经安装 Copy 时，不必重复安装 `chestnut-copy-sop`；文风分析和公众号发布现在也是独立 Skill，按需单独下载。
 
 ## 已经在用 Copy Skill？
 
-原来的 [chestnut-copy-skill](https://github.com/chestnutzoe/chestnut-copy-skill) 地址继续提供三个文案工具，原插件身份保留。这是新的独立下载入口，不会通过旧 Copy 插件向你加入整套工具。
+原来的 [chestnut-copy-skill](https://github.com/chestnutzoe/chestnut-copy-skill) 地址从 2.3.0 起只提供 Copy 文案 Skill，原插件身份保留。文风分析与公众号发布已迁入本仓库，独立维护和下载。
 
-旧 Copy 仓库曾在 2.2.0 加入四个品牌工具；从 2.2.1 起恢复三个文案工具。若你已更新到混合版，请看旧仓库的 [迁移说明](https://github.com/chestnutzoe/chestnut-copy-skill/blob/main/MIGRATION.md)。
+旧版组合包用户请看 [迁移说明](https://github.com/chestnutzoe/chestnut-copy-skill/blob/main/MIGRATION.md)。更新 Copy 前，先单独下载你还需要的其他工具。
 
 ## 维护与发布
 
-- 四个品牌工具的公开维护源是本仓库 `skills/` 下的对应目录。
-- 三个文案工具的公开维护源仍在旧 Copy 仓库。本仓库保留明确版本的发行副本，只有发布时才有意更新；不与私人工作 Skills 同步。
-- 本次三个文案工具来源：`chestnut-copy-skill` 提交 `092e0af861c911b96aed147b8512ab75ca7b0aa9`。四个品牌工具由该版本迁入，内容未改。
+- 六个非 Copy 工具（包括文风分析、公众号发布）的公开维护源是本仓库 `skills/` 下的对应目录。
+- 只有 `chestnut-copy-sop` 的公开维护源仍在旧 Copy 仓库。本仓库保留明确版本的发行副本，只有发布时才有意更新；不与私人工作 Skills 同步。
+- 文风分析和公众号发布迁入时的内容来源：`chestnut-copy-skill` 提交 `092e0af861c911b96aed147b8512ab75ca7b0aa9`。四个品牌工具也由该版本迁入。Copy 发行副本更新至 2.3.0，明确两个伴随工具为可选独立下载。
 - 运行 `python3 scripts/package.py` 生成七个单项 ZIP、整包 ZIP 和 SHA-256 校验记录；上传到 GitHub Release。
 - 这个仓库提供独立 Skills 下载，不复用旧仓库的 `chestnut` marketplace 或插件身份。
