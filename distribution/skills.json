@@ -34,11 +34,5 @@
     "label": "文风分析",
     "repo": "chestnutzoe/chestnut-style-analyzer",
     "key_secret": "PUBLISH_CHESTNUT_STYLE_ANALYZER"
-  },
-  {
-    "skill": "chestnut-wechat-publisher",
-    "label": "公众号草稿发布",
-    "repo": "chestnutzoe/chestnut-wechat-publisher",
-    "key_secret": "PUBLISH_CHESTNUT_WECHAT_PUBLISHER"
   }
 ]

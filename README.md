@@ -16,7 +16,6 @@
 | [chestnut-brand-story](https://github.com/chestnutzoe/chestnut-brand-story/blob/main/SKILL.md) | 个人品牌故事 | [独立仓库](https://github.com/chestnutzoe/chestnut-brand-story) | [ZIP](https://github.com/chestnutzoe/chestnut-brand-story/releases/latest/download/chestnut-brand-story.zip) |
 | [chestnut-product-brief](https://github.com/chestnutzoe/chestnut-product-brief/blob/main/SKILL.md) | 产品说明书 | [独立仓库](https://github.com/chestnutzoe/chestnut-product-brief) | [ZIP](https://github.com/chestnutzoe/chestnut-product-brief/releases/latest/download/chestnut-product-brief.zip) |
 | [chestnut-style-analyzer](https://github.com/chestnutzoe/chestnut-style-analyzer/blob/main/SKILL.md) | 文风分析 | [独立仓库](https://github.com/chestnutzoe/chestnut-style-analyzer) | [ZIP](https://github.com/chestnutzoe/chestnut-style-analyzer/releases/latest/download/chestnut-style-analyzer.zip) |
-| [chestnut-wechat-publisher](https://github.com/chestnutzoe/chestnut-wechat-publisher/blob/main/SKILL.md) | 公众号草稿发布 | [独立仓库](https://github.com/chestnutzoe/chestnut-wechat-publisher) | [ZIP](https://github.com/chestnutzoe/chestnut-wechat-publisher/releases/latest/download/chestnut-wechat-publisher.zip) |
 
 ## 怎么用
 
@@ -25,7 +24,7 @@
 - 整套下载：整包包含同样的独立文件夹，不要求按顺序使用。已经装过的 Skill 不必重复安装。
 - 原 Copy 仓库地址与兼容插件身份保留，详见 [Copy 迁移说明](https://github.com/chestnutzoe/chestnut-copy-skill/blob/main/MIGRATION.md)。
 
-这里目前收录七个已公开的 Skills。尚未宣称覆盖云股东所有课程；课程覆盖、品牌合作与新版个人美学的接入另行核对，不以文件数量替代完整性验收。
+这里目前收录六个已公开的 Skills。尚未宣称覆盖云股东所有课程；课程覆盖、品牌合作与新版个人美学的接入另行核对，不以文件数量替代完整性验收。
 
 ## 只维护一处
 
