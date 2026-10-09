@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: python3 scripts/check_distribution.py
       - id: matrix
-        run: echo "matrix=$(python3 -c 'import json; print(json.dumps({"include":json.load(open("distribution/skills.json"))}))')" >> "$GITHUB_OUTPUT"
+        run: echo "matrix=$(python3 -c 'import json; print(json.dumps({"include":[s for s in json.load(open("distribution/skills.json")) if s.get("mirror", True)]}))')" >> "$GITHUB_OUTPUT"
   bundle:
     needs: prepare
     runs-on: ubuntu-latest

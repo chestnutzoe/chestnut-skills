@@ -13,6 +13,16 @@ with tempfile.TemporaryDirectory() as temp:
         name = item['skill']
         source = ROOT / 'skills' / name
         assert f'name: {name}\n' in (source / 'SKILL.md').read_text()
+        if item.get('mirror', True) is False:
+            assert item['repo'] == 'chestnutzoe/chestnut-skills'
+            files = [p for p in source.rglob('*') if p.is_file()]
+            assert not any(p.is_symlink() for p in files)
+            with zipfile.ZipFile(ROOT / 'dist' / (name + '.zip')) as z:
+                assert z.testzip() is None
+                assert set(z.namelist()) == {'LICENSE'} | {name + '/' + str(p.relative_to(source)) for p in files}
+                for p in files:
+                    assert z.read(name + '/' + str(p.relative_to(source))) == p.read_bytes()
+            continue
         dest = Path(temp) / name
         render(name, dest, revision)
         metadata = json.loads((dest / 'source.json').read_text())

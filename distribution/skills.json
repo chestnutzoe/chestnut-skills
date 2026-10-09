@@ -1,5 +1,11 @@
 [
   {
+    "skill": "chestnut-content-analysis",
+    "label": "内容拆解与实践",
+    "repo": "chestnutzoe/chestnut-skills",
+    "mirror": false
+  },
+  {
     "skill": "chestnut-copy",
     "label": "Chestnut Copy",
     "repo": "chestnutzoe/chestnut-copy-skill",

@@ -6,10 +6,11 @@
 
 ## 独立使用与 Star
 
-各 Skill 有独立仓库、调用链接、下载包和 Star。总仓库是唯一维护源，修改后由 GitHub Actions 自动更新各仓库和下载包。
+每个 Skill 都有单独下载包，也包含在整包中。已有独立仓库的 Skill 保留原入口；新增的内容拆解与实践可直接从总仓库读取或单独下载。总仓库是唯一维护源。
 
 | Skill | 用途 | 独立入口与 Star | 单独下载 |
 | --- | --- | --- | --- |
+| [chestnut-content-analysis](https://github.com/chestnutzoe/chestnut-skills/blob/main/skills/chestnut-content-analysis/SKILL.md) | 内容拆解与实践：分析参考或自有作品，用自己的素材做一次实践 | [总仓库入口](https://github.com/chestnutzoe/chestnut-skills/tree/main/skills/chestnut-content-analysis) | [ZIP](https://github.com/chestnutzoe/chestnut-skills/releases/latest/download/chestnut-content-analysis.zip) |
 | [chestnut-copy](https://github.com/chestnutzoe/chestnut-copy-skill/blob/main/SKILL.md) | Chestnut Copy | [独立仓库](https://github.com/chestnutzoe/chestnut-copy-skill) | [ZIP](https://github.com/chestnutzoe/chestnut-copy-skill/releases/latest/download/chestnut-copy.zip) |
 | [chestnut-positioning-statement](https://github.com/chestnutzoe/chestnut-positioning-statement/blob/main/SKILL.md) | 一句话定位 | [独立仓库](https://github.com/chestnutzoe/chestnut-positioning-statement) | [ZIP](https://github.com/chestnutzoe/chestnut-positioning-statement/releases/latest/download/chestnut-positioning-statement.zip) |
 | [chestnut-brand-guidance](https://github.com/chestnutzoe/chestnut-brand-guidance/blob/main/SKILL.md) | 品牌表达指南 | [独立仓库](https://github.com/chestnutzoe/chestnut-brand-guidance) | [ZIP](https://github.com/chestnutzoe/chestnut-brand-guidance/releases/latest/download/chestnut-brand-guidance.zip) |
@@ -24,7 +25,7 @@
 - 整套下载：整包包含同样的独立文件夹，不要求按顺序使用。已经装过的 Skill 不必重复安装。
 - 原 Copy 仓库地址与兼容插件身份保留，详见 [Copy 迁移说明](https://github.com/chestnutzoe/chestnut-copy-skill/blob/main/MIGRATION.md)。
 
-这里目前收录六个已公开的 Skills。尚未宣称覆盖云股东所有课程；课程覆盖、品牌合作与新版个人美学的接入另行核对，不以文件数量替代完整性验收。
+这里目前收录七个 Skills。尚未宣称覆盖云股东所有课程；不以文件数量替代完整性验收。
 
 ## 只维护一处
 
@@ -38,7 +39,7 @@
 
 ## 发布维护
 
-- `distribution/skills.json`：Skill 与独立仓库的映射。
+- `distribution/skills.json`：Skill 与独立仓库的映射；`mirror: false` 的条目从总仓库提供单项包和整包，不需要新增部署密钥。
 - `scripts/package.py`：生成所有单项包和整包。
 - `scripts/render_mirror.py`：从唯一源文件生成独立仓库；Copy 的旧链接和插件结构按模板生成。
 - `distribution/templates/`：发布模板，不保存第二份 Skill 内容。
